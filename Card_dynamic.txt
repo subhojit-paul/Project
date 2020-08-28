@@ -1,0 +1,18 @@
+
+    <div class="card-group">
+        <div class="card-header">
+            @foreach (var item in Model)
+            {
+            <div class="col-md-3">
+                
+                @Html.ActionLink(item.Name, "Details", "Customer", new { id = item.Id }, null)
+                <div class="card-body">
+                    <h5 class="card-title"> @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })</h5>
+                    <p class="card-text">This is a wider card with s.</p>
+                    <p class="card-text"><small class="text-muted">@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })</small></p>
+
+                </div>
+            </div>}
+        </div>
+                       
+</div>
