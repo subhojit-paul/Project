@@ -1,0 +1,44 @@
+﻿@model PieShopDemo.Models.RegisterUser
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("SaveUser", "Register"))
+{
+<div class="form-group">
+    @Html.LabelFor(model => model.FName)
+
+
+    @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "form-control" } })
+
+
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.LName)
+
+
+    @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "form-control" } })
+
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.ZipCode)
+
+
+    @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.PhoneNo)
+
+
+    @Html.EditorFor(model => model.PhoneNo, new { htmlAttributes = new { @class = "form-control" } })
+
+</div>
+@Html.HiddenFor(m=>m.Id)
+<button type="submit" class="btn btn-outline-success">Edit</button>
+}

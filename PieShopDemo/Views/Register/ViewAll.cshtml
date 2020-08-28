@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PieShopDemo.Models.RegisterUser>
+@{
+    ViewBag.Title = "ViewAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewAll</h2>
+@if (!Model.Any())
+{
+    <p>No customers found</p>
+}
+else
+{
+<div>
+    @foreach (var m in Model)
+    {
+    
+        @Html.ActionLink(m.FName, "Details", "Register", new { id = m.Id }, null)
+    <br />
+
+        @m.LName<br />
+        @m.Address<br />
+        @m.City
+       
+
+        @Html.ActionLink("Go To", "ViewAll", new { id = m.Id }, new { @class = "btn btn-success" })
+
+    }
+</div>
+}
